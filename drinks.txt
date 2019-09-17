@@ -1,4 +1,9 @@
-1, Coffee
-2, Tes
-3, Coke
-4, Water
+1, Cappuccino
+2, Latte
+3, Americano
+4, Espresso
+5, Black Tea
+6, White Tea
+7, Coke
+8, Diet Coke
+9, Water
