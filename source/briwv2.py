@@ -1,4 +1,4 @@
-from persist_round import *
+from source.persistence.persist_round import *
 
 def separator():
     print("="*20)
@@ -8,7 +8,7 @@ def header(title):
     print(f"{title.center(20)}")
     separator()
 
-def create_dictionary(file_path):
+def create_dictionary(file_path: str):
     dict = {}
     file = open(file_path, "r")
     for line in file.readlines():
@@ -19,9 +19,9 @@ def create_dictionary(file_path):
             dict[key] = value
     return dict
 
-peeps = create_dictionary("people.txt")
-bevs = create_dictionary("drinks.txt")
-favourites = create_dictionary("favourites.txt")
+peeps = create_dictionary("persistence/people.txt")
+bevs = create_dictionary("persistence/drinks.txt")
+favourites = create_dictionary("persistence/favourites.txt")
 
 pref_mapped={}
 for person_id, drink_id in favourites.items():
@@ -62,6 +62,8 @@ class Round:
         self.round = new_round
 
 if __name__=="__main__":
+
+
     print("\n\nTime to make a round!")
     round_maker=input("\nSo, who's making the round?")
     print(f"\nGood on you, {round_maker}!")

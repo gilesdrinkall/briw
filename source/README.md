@@ -9,7 +9,7 @@ You will need to have Python3 installed.
 ## Setup
 
 The application will attempt to read in both a list of team members and a list of available drinks found in files called `people.txt` and 'drinks.txt' respectively. These files are stored at the top-level directory of this project.
-The round you create is presisted to a file called 'round.txt'
+The round you create is persisted to a file called 'round.txt'
 These files needs to be defined before using the applications and never committed to source control for privacy reasons.
 
 Example `people.txt`:
