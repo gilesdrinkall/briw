@@ -1,0 +1,28 @@
+<!doctype html>
+  <html>
+    <head>
+        <title>BrIW - Make that round!</title>
+        <link rel="stylesheet" href="static/css/main.css">
+    </head>
+    <body>
+        <div id="left"></div>
+        <div id="right"></div>
+        <div id="top"></div>
+        <div id="bottom"></div>
+        <div class="centre" class="font-family" class="font-size">
+        <br/>
+        <p id="round_maker">{{round_maker}} is making a round!</p>
+        <p id="current_order">So far, the round looks like this:</p>
+        {% for pers_nm, drk_nm in current_order.items() %}
+        <li>{{ pers_nm }} - {{drk_nm}}</li>
+        {% endfor %}
+        <form method="POST">
+        <label> Name </label>
+        <input type="text" name="name"><br>
+        <label> Drink </label>
+        <input type="text" name="drink">
+        <button type="submit"> Submit </button>
+        </form>
+        </div>
+    </body>
+  </html>

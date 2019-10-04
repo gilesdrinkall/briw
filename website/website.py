@@ -16,7 +16,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'text/html')
         self.end_headers()
 
-        drinks_dict = create_dictionary("Drink", "drink_id", "name")
+        drinks_dict = create_dictionary("drink", "drink_id", "name")
 
         # Produce the HTML
         html_document = f"""
