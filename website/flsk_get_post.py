@@ -7,6 +7,19 @@ from source.persistence.database import *
 app = Flask(__name__)
 
 
+@app.route("/homepage", methods=["GET"])
+def view_homepage():
+
+    if request.method == "GET":
+        round_dict = get_maker_name_from_db()
+        maker_name = round_dict["maker_name"]
+        orders_dict = create_dict_with_subset_data_db("orders", "person_name", "drink_name")
+        return render_template("index.html", title="BrIW Homepage", round_maker=maker_name, current_order=orders_dict)
+
+    else:
+        return "Unsupported HTTP Request Type"
+
+
 @app.route("/briwer", methods=["GET", "POST"])
 def add_briwer():
 
@@ -22,14 +35,11 @@ def add_briwer():
         return "Unsupported HTTP Request Type"
 
 
-@app.route("/round", methods=["GET", "POST"])
-def view_add_round():
+@app.route("/order", methods=["GET", "POST"])
+def add_order():
 
     if request.method == "GET":
-        round_dict = get_maker_name_from_db()
-        maker_name = round_dict["maker_name"]
-        orders_dict = create_dict_with_subset_data_db("orders", "person_name", "drink_name")
-        return render_template("order_input.html", title="Create New Person", round_maker=maker_name, current_order=orders_dict)
+        return render_template("order_input.html", title="Create New Order")
 
     if request.method == "POST":
         name = request.form["name"]
