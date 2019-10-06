@@ -1,0 +1,94 @@
+.centre{
+       text-align:center;
+}
+
+body{
+        background-image:url("../static/img/chintzy.jpeg");
+}
+
+.font-family{
+        font-family:cursive;
+}
+
+.font-size{
+        font-size:80px;
+}
+
+#main-heading{
+       color:#2c3e50;
+       font-size:60px;
+}
+
+#tag-line{
+       color:#2c3e50;
+       font-size:30px;
+}
+
+#introduction{
+       color:#2c3e50;
+       font-size:25px;
+}
+
+#top, #bottom, #left, #right {
+	background: #7fb3d5;
+	position: fixed;
+}
+
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 15px;
+}
+		#left { left: 0; }
+		#right { right: 0; }
+
+	#top, #bottom {
+		left: 0; right: 0;
+		height: 15px;
+}
+		#top { top: 0; }
+		#bottom { bottom: 0; }
+
+.button{
+    font-family:inherit;
+	background-color :#7fb3d5;
+	border: 1px solid;
+	color: black;
+	text align: center;
+	font-size: 15px
+}
+
+.std_text{
+       color:#2c3e50;
+       font-size:20px;
+}
+
+#current_order{
+       color:#2c3e50;
+       font-size:30px;
+}
+
+.name{
+       color:#2c3e50;
+       font-size:30px;
+}
+
+#drink{
+       color:#2c3e50;
+       font-size:20px;
+       padding-left:67px;
+}
+
+#list{
+       color:#2c3e50;
+       font-size:30px;
+}
+
+#intro{
+       color:#2c3e50;
+       font-size:30px;
+}
+
+#order_details{
+       color:#2c3e50;
+       font-size:30px;
+}

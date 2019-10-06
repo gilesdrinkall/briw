@@ -2,7 +2,7 @@
   <html>
     <head>
       <title>BrIW - Make that round!</title>
-      <link rel="stylesheet" href="static/css/main.css"/>
+      <link rel="stylesheet" href="main.css">
     </head>
     <body>
       <div id="left"></div>
@@ -10,11 +10,16 @@
       <div id="top"></div>
       <div id="bottom"></div>
       <div class="centre" class="font-family">
-        <img src="http://www.bbc.co.uk/staticarchive/9fca5a87a0534b255ab88800871d7d89f05a7876.jpg" width="300" height="300">
-        <p id="main-heading">BrIW</p>
-        <p id="tag-line"><em>"C'mon, time to make that round!"</em></p>
-        <p id="introduction">BrIW is an interactive, web-based application designed to turn the daily chore of making a round of drinks for your teammates into a genuine pleasure!</p>
-        <a href="template/user_input.html">Click here to make a round!</a>
+          <img src="http://www.bbc.co.uk/staticarchive/9fca5a87a0534b255ab88800871d7d89f05a7876.jpg" width="300" height="300" border="2" vspace="20">
+          <p id="main-heading">BrIW<span style="font-size:20px">&reg;</span></p>
+          <p id="tag-line"><em>"C'mon, it's time to make that round!"</em></p>
+          <p id="introduction">An interactive application designed to turn the daily chore of making a round into a genuine pleasure!</p>
+          <p class="std_text">As things stand, {{round_maker}} is currently down to make the BrIW round!</p>
+          <button class="button" type="briwer_input.html">Assign a different BrIWer!</button>
+          <p class="std_text">The round so far is looking like this:</p>
+          {% for pers_nm, drk_nm in current_order.items() %}
+          <li class="std_text">{{ pers_nm }} - {{drk_nm}}</li>
+          <button class="button" type="order_input.html">Add an order to the round!</button>
       </div>
     </body>
   </html>
