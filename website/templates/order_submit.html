@@ -2,7 +2,7 @@
   <html>
     <head>
       <title>BrIW - Make that round!</title>
-      <link rel="stylesheet" href="main.css">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css')}}">
     </head>
     <body>
       <div id="left"></div>
@@ -16,7 +16,7 @@
         <br/>
         <img src="../static/img/teapot.jpg" width="300" height="300" border="2" vspace="60">
         <br/>
-        <button class="button" type="index.html">Return to BrIW Homepage!</button>
+        <a class="button" href="/homepage">Return to BrIW Homepage!</a>
       </div>
     </body>
   </html>

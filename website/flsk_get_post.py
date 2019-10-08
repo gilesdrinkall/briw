@@ -27,7 +27,7 @@ def add_briwer():
         return render_template("briwer_input.html", title="Create New BrIWer")
 
     if request.method == "POST":
-        name = request.form["Name of BrIWer"]
+        name = request.form["name"]
         add_maker_to_db(name)
         return render_template("briwer_submit.html", briwer_name=name)
 
@@ -52,4 +52,4 @@ def add_order():
 
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)
