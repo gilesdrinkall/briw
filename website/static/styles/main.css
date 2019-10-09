@@ -17,16 +17,19 @@ body{
 #main-heading{
        color:#2c3e50;
        font-size:60px;
+       margin-top:20px;
+       margin-top:1px;
 }
 
 #tag-line{
        color:#2c3e50;
        font-size:30px;
+       margin-bottom:10px;
 }
 
 #introduction{
        color:#2c3e50;
-       font-size:25px;
+       font-size:23px;
 }
 
 #top, #bottom, #left, #right {
