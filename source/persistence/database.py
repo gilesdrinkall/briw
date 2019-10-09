@@ -65,6 +65,14 @@ def delete_drink_from_db(drink_id):
     db.close()
 
 
+def clear_all_from_order():
+    db = get_db_connection()
+    cursor = db.cursor(pymysql.cursors.DictCursor)
+    cursor.execute(f"DELETE FROM orders;")
+    db.commit()
+    db.close()
+
+
 def add_maker_to_db(maker_name):
     db = get_db_connection()
     cursor = db.cursor(pymysql.cursors.DictCursor)

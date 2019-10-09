@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 import unittest
-import mock
+from unittest import mock
 from source.persistence.database import *
 
 class TestDictionarySubset(unittest.TestCase):
@@ -8,8 +8,6 @@ class TestDictionarySubset(unittest.TestCase):
 
     @mock.patch("source.persistence.database.get_db_connection")
     def test_dictionary_subset_created_from_database_query(self, get_db_connection):
-
-        #arrange
 
         db_mock = Mock()
 
@@ -27,11 +25,7 @@ class TestDictionarySubset(unittest.TestCase):
 
         expected = {"1": "Giles", "2": "Chris"}
 
-        #act
-
-        actual = create_dictionary(test_table, pers_id, first_name)
-
-        #assert
+        actual = create_dict_with_subset_data_db(test_table, pers_id, first_name)
 
         self.assertEqual(expected, actual)
 

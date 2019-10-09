@@ -39,7 +39,7 @@ def add_briwer():
 def add_order():
 
     if request.method == "GET":
-        return render_template("order_input.html", title="Create New Order")
+        return render_template("order_input.html", title="Add To Order")
 
     if request.method == "POST":
         name = request.form["name"]
@@ -49,6 +49,34 @@ def add_order():
 
     else:
         return "Unsupported HTTP Request Type"
+
+
+@app.route("/new_round", methods=["GET", "POST"])
+def create_new_order():
+
+    if request.method == "GET":
+        return render_template("new_round_input.html", title="Create New Order")
+
+    if request.method == "POST":
+        clear_all_from_order()
+        name = request.form["name"]
+        add_maker_to_db(name)
+        return render_template("new_round_submit.html", briwer_name=name)
+
+    else:
+        return "Unsupported HTTP Request Type"
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':

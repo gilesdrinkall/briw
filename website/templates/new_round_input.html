@@ -1,0 +1,28 @@
+<!doctype html>
+  <html>
+    <head>
+        <title>BrIW - Make that round!</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css')}}">
+    </head>
+    <body>
+        <div id="left"></div>
+        <div id="right"></div>
+        <div id="top"></div>
+        <div id="bottom"></div>
+        <div class="centre" class="font-family" class="font-size">
+            <br/>
+            <p class="std_text">If you would like to create a new order, please the enter the name of the new BrIWer and press Submit:</p>
+            <br/>
+            <form method="POST">
+            <label class="std_text"> Name </label>
+            <input type="text" name="name">
+            <button class="button" type="submit"> Submit </button>
+            </form>
+            <br/>
+            <img src="https://i.redd.it/ku47qhmbdqs11.jpg" width="300" height="300" border="2" vspace="80">
+            <p class="std_text">If you don't want to create a new order, click the button below to return to the Homepage:</p>
+            <br/>
+            <a class="button" href="/homepage">Return to BrIW Homepage!</a>
+        </div>
+    </body>
+  </html>
