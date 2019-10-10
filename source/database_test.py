@@ -5,6 +5,7 @@ from source.persistence.database import *
 
 class Test_Methods(unittest.TestCase):
 
+
     @mock.patch("source.persistence.database.get_db_connection")
     def test_get_maker_name_from_db_calls_cursor_execute(self, get_db_connection):
 
@@ -22,8 +23,29 @@ class Test_Methods(unittest.TestCase):
 
         cursor_mock.execute.assert_called_with(expected_sql_query)
 
+
     @mock.patch("source.persistence.database.get_db_connection")
-    def test_get_maker_name_from_db(self, get_db_connection):
+    def test_add_maker_name_to_db_calls_cursor_execute(self, get_db_connection):
+
+        db_mock = mock.Mock()
+
+        get_db_connection.return_value = db_mock
+
+        cursor_mock = mock.Mock()
+
+        db_mock.cursor.return_value = cursor_mock
+
+        maker_name = "Giles"
+
+        add_maker_to_db(maker_name)
+
+        expected_sql_query = 'INSERT INTO round (maker_name) VALUES ("Giles");'
+
+        cursor_mock.execute.assert_called_with(expected_sql_query)
+
+
+    @mock.patch("source.persistence.database.get_db_connection")
+    def test_get_maker_name_from_db_returns_expected_value(self, get_db_connection):
 
         db_mock = mock.Mock()
 
@@ -42,6 +64,26 @@ class Test_Methods(unittest.TestCase):
         self.assertEqual(expected_value, actual_value)
 
 
+    # @mock.patch("source.persistence.database.get_db_connection")
+    # def test_add_maker_to_db_(self, get_db_connection):
+    #
+    #     db_mock = mock.Mock()
+    #
+    #     get_db_connection.return_value = db_mock
+    #
+    #     cursor_mock = mock.Mock()
+    #
+    #     db_mock.cursor.return_value = cursor_mock
+    #
+    #     maker_name = "John"
+    #
+    #     expected_value = 1
+    #
+    #     cursor_mock.lastrowid.return_value = expected_value
+    #
+    #     actual_value = add_maker_to_db(maker_name)
+    #
+    #     self.assertEqual(expected_value, actual_value)
 
 
     # def test_create_dictionary(self):

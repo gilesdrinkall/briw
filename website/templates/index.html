@@ -13,12 +13,14 @@
           <img src="http://www.bbc.co.uk/staticarchive/9fca5a87a0534b255ab88800871d7d89f05a7876.jpg" width="300" height="300" border="2" vspace="20">
           <p id="main-heading">BrIW<span style="font-size:20px">&reg;</span></p>
           <p id="tag-line"><em>"C'mon, it's time to make that round!"</em></p>
+          <br/>
           <p id="introduction">An interactive application designed to turn the daily chore of making a round into a genuine pleasure!</p>
           <p class="std_text">As things stand, {{round_maker}} is currently down to make the next BrIW round!</p>
           <p class="std_text">The round so far is looking like this:</p>
           {% for pers_nm, drk_nm in current_order.items() %}
           <li class="std_text">{{ pers_nm }} - {{drk_nm}}</li>
           {% endfor %}
+          <br/>
           <br/>
           <div class="dropdown">
             <button class="dropbtn">What would you like to do?</button>
